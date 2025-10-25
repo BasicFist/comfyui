@@ -44,6 +44,64 @@ This repository hosts a tuned ComfyUI workspace optimized for explicit/mature im
 - `user/`
   - Per-ComfyUI settings/database (included for completeness).
 
+## Step-by-Step Guide
+
+Below is the exact sequence used to build this workspace from a vanilla ComfyUI clone. Run commands from the repository root unless noted.
+
+1. **Install IPAdapter+ and supporting managers**
+   ```bash
+   git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus custom_nodes/ComfyUI_IPAdapter_plus
+   git clone https://github.com/ltdrdata/ComfyUI-Manager custom_nodes/ComfyUI-Manager
+   git clone https://github.com/willmiao/ComfyUI-Lora-Manager custom_nodes/ComfyUI-Lora-Manager
+   git clone https://github.com/kohya-ss/ComfyUI-EasyCivitai-XTNodes custom_nodes/ComfyUI-EasyCivitai-XTNodes
+   ```
+   Remove nested `.git` folders so the node suites live directly inside this repository.
+
+2. **Download large model assets (kept out of Git)**
+   ```bash
+   # SDXL IPAdapter weights
+   curl -L -o models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors \
+        https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors
+   curl -L -o models/ipadapter/ip-adapter-plus-face_sdxl_vit-h.safetensors \
+        https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+   curl -L -o models/ipadapter/ip_plus_composition_sdxl.safetensors \
+        https://huggingface.co/ostris/ip-composition-adapter/resolve/main/ip_plus_composition_sdxl.safetensors
+
+   # CLIP vision encoders for SDXL IPAdapter
+   curl -L -o models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors \
+        https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
+   curl -L -o models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors \
+        https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors
+
+   # SDXL OpenPose ControlNet
+   curl -L -o models/controlnet/OpenPoseXL2.safetensors \
+        https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors
+   ```
+   Place checkpoints (Pony Diffusion V6 XL, ExpressiveH LoRA, etc.) inside the existing `models/` subdirectories.
+
+3. **Update CASE prompt tooling** – edit the files under `workflows/recipes/`:
+   - `case_prompt_pools.json`: add mature vocabulary and style presets.
+   - `generate_case_prompt.py`: expose `--style-preset` and bias sampling toward the chosen modes.
+   - `apply_case_prompt.py`: add LoRA/CLIP tuning, ControlNet, and IPAdapter automation flags.
+
+4. **Create tailored workflows** – start from `workflows/illustrious_case_template.json` and run:
+   ```bash
+   workflows/recipes/apply_case_prompt.py \
+     --workflow workflows/illustrious_case_template.json \
+     --output workflows/my_explicit_scene.json \
+     --style-preset hardcore --mature \
+     --neg-groups body_artifacts fluid_control \
+     --add-ipadapter --ipadapter-image ComfyUI/output/openwebui_00001_.png \
+     --ipadapter-weight 0.9 --ipadapter-end 0.65 \
+     --add-controlnet --controlnet OpenPoseXL2.safetensors \
+     --control-image ComfyUI/input/control_reference.png
+   ```
+   The helper copies referenced images into `ComfyUI/input/` and rewires the sampler/conditioners.
+
+5. **Document and commit** – update `.gitignore`, add README notes, then commit & push to GitHub.
+
+Following these steps reproduces the configuration committed here from scratch.
+
 ## Quick Start
 
 1. Install dependencies (Python, ComfyUI runtime) per upstream ComfyUI instructions or use the provided scripts.
