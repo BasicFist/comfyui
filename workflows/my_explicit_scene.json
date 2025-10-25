@@ -37,7 +37,7 @@
   "6": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "(sensual masterpiece), dusky amber wash, intimate close-up, erotic illustration finish, Expressiveh, heated anticipation, tangled passion, high-contrast lighting, raw kinetic energy\narching back in ecstasy, rhythmic thrust, lustful gaze, shared toy play, guided penetration, rough grip, feral intensity\ndominant partner, sweat-kissed skin, slicked back ponytail, sheer bodysuit, heaving chest, soft tummy, ankle restraints, bite marks, sweat-slick skin\nluxury hotel suite, after midnight glow, moody red gels, champagne on nightstand, satin pillows, shadows dancing, gritty neon haze, metal fixtures",
+      "text": "(velvet noir), dusky amber wash, chiaroscuro framing, erotic illustration finish, Expressiveh, smouldering desire, after-dark rendezvous, high-contrast lighting, raw kinetic energy\narching back in ecstasy, swaying hips, breathless pant, supportive embrace, deep kiss, feral intensity\ndominant partner, sweat-kissed skin, messy fringe, garter belt and stockings, glistening skin, freckled shoulders, body chain, bite marks, sweat-slick skin\nprivate club room, neon-soaked twilight, hazy perfume swirl, restraints hanging nearby, satin pillows, creaking bedsprings, gritty neon haze, metal fixtures",
       "clip": [
         "12",
         1
@@ -122,7 +122,7 @@
   "14": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "control_reference.png"
+      "image": "pose_library/pv2_3.png"
     }
   },
   "15": {
@@ -144,7 +144,7 @@
         "14",
         0
       ],
-      "strength": 0.9,
+      "strength": 0.85,
       "start_percent": 0.0,
       "end_percent": 1.0
     }
@@ -162,7 +162,7 @@
   "17": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "openwebui_00001_.png"
+      "image": "output/openwebui_00005_.png"
     }
   },
   "18": {

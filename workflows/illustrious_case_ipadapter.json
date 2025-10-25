@@ -37,7 +37,7 @@
   "6": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "sumptuous detail, neon strip glow, chiaroscuro framing, velvet noir, Expressiveh, decadent indulgence, stolen moment, soft vignette, rose-tinted palette\nguiding partner's hand, rhythmic thrust, half-lidded moan, whispering dirty talk, teasing fingertips, gentle embrace\nentwined lovers, wet lips, slicked back ponytail, collar and leash, glistening skin, thigh gap, bondage cuffs, tender expression, interlaced fingers\ncandlelit bedroom, neon-soaked twilight, shadows from candlelight, champagne on nightstand, satin pillows, heavy breathing, bedside candlelight, scattered rose petals",
+      "text": "Expressiveh, (masterpiece:1.1), best quality, velvet noir, cinematic framing, volumetric lighting, dynamic composition, rose glow\n\nslow dance pose, intertwined fingers, whispered confession, gentle smile, lingering touch\n\n1girl, luminous skin, glossy lips, tousled hair, delicate jewelry, natural curves, detailed hands\n\ncandlelit lounge, warm amber haze, satin sofa, scattered rose petals, vintage glassware, ambient smoke",
       "clip": [
         "12",
         1
@@ -47,7 +47,7 @@
   "7": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, bad proportions, anatomical nonsense, bad face, text, logo, watermark, username, duplicate, multiple views, monochrome, jpeg artifacts, sketch, broken spine, bloating, asymmetrical breasts, warped torso, messy liquid artifacts, unrealistic gloss, random fluid splatter",
+      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, bad proportions, anatomical nonsense, bad face, text, logo, watermark, username, duplicate, multiple views, monochrome, jpeg artifacts, sketch, broken spine, bloating, asymmetrical breasts, warped torso, messy liquid artifacts, unrealistic gloss, random fluid splatter, soft focus",
       "clip": [
         "12",
         1
@@ -126,7 +126,7 @@
   "14": {
     "class_type": "LoadImage",
     "inputs": {
-      "image": "example.png"
+      "image": "output/openwebui_00002_.png"
     }
   },
   "15": {
@@ -144,11 +144,11 @@
         "14",
         0
       ],
-      "weight": 0.85,
+      "weight": 0.8,
       "weight_type": "style and composition",
       "combine_embeds": "average",
       "start_at": 0.0,
-      "end_at": 0.7,
+      "end_at": 0.6,
       "embeds_scaling": "K+mean(V) w/ C penalty"
     }
   }

@@ -9,7 +9,7 @@
       "scheduler": "normal",
       "denoise": 1.0,
       "model": [
-        "12",
+        "15",
         0
       ],
       "positive": [
@@ -37,7 +37,7 @@
   "6": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "Expressiveh, (masterpiece:1.1), best quality, very aesthetic, velvet noir, volumetric lighting, cinematic framing, dynamic composition\n\ngentle embrace, intertwined hands, storytelling focus, soft laughter, lingering touch\n\n1girl, expressive eyes, flushed cheeks, silky hair, delicate jewelry, natural curves, detailed hands\n\ncandlelit suite, warm amber glow, satin sheets, scattered rose petals, ambient haze, light particles",
+      "text": "Expressiveh, (masterpiece:1.1), best quality, rose-tinted palette, soft vignette, cinematic framing, volumetric lighting, dreamy ambience\n\nslow sway, foreheads touching, gentle embrace, tender smile, intertwined hands\n\n1girl, freckled nose, silky hair, flushed cheeks, delicate jewelry, natural curves, detailed hands\n\ncandlelit suite, warm amber glow, scattered rose petals, sheer curtains, ambient haze, soft bokeh",
       "clip": [
         "12",
         1
@@ -111,6 +111,45 @@
       "lora_name": "Pony/anime/Expressive_H-000001.safetensors",
       "strength_model": 0.75,
       "strength_clip": 0.65
+    }
+  },
+  "13": {
+    "class_type": "IPAdapterUnifiedLoader",
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ],
+      "preset": "PLUS (high strength)"
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "output/openwebui_00003_.png"
+    }
+  },
+  "15": {
+    "class_type": "IPAdapterAdvanced",
+    "inputs": {
+      "model": [
+        "13",
+        0
+      ],
+      "ipadapter": [
+        "13",
+        1
+      ],
+      "image": [
+        "14",
+        0
+      ],
+      "weight": 0.75,
+      "weight_type": "style and composition",
+      "combine_embeds": "average",
+      "start_at": 0.0,
+      "end_at": 0.55,
+      "embeds_scaling": "K+mean(V) w/ C penalty"
     }
   }
 }
