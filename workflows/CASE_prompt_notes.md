@@ -42,6 +42,7 @@ Record interesting line substitutions in `workflows/recipes/` so you can reuse t
 ### ControlNet Hook
 
 - The repo includes `OpenPoseXL2.safetensors` (thibaud/controlnet-openpose-sdxl-1.0). Place any additional SDXL ControlNets under `ComfyUI/models/controlnet/` and rerun the helper so the workflow references them.
+- Portrait pose PNGs from `posesPacksCollection_portraitV2` are mirrored in `input/pose_library/`; pass any of them via `--control-image input/pose_library/pv2_X.png`.
 - Run `apply_case_prompt.py --add-controlnet --controlnet <model.safetensors> --control-image /path/to/reference.png` to clone the workflow with a ControlNet pipeline. The script copies the reference into `ComfyUI/input/` and re-targets the sampler so you can fine-tune strength/start/end inside ComfyUI.
 - Swap poses by replacing the file under `ComfyUI/input/` (or rerun the script) and reload; the ControlNet loader caches the selected model for fast iteration.
 - For depth/canny maps generated within ComfyUI, drop them into `ComfyUI/input/` and refresh—no graph surgery required.

@@ -103,6 +103,16 @@ Below is the exact sequence used to build this workspace from a vanilla ComfyUI 
 
 Following these steps reproduces the configuration committed here from scratch.
 
+## Recommended CivitAI References
+
+- [Prompt Notebook](https://civitai.com/articles/3160/prompt-notebook)
+- [ComfyUI Workflow: Study Case](https://civitai.com/articles/5366/comfyui-workflow-study-case)
+- [Scene Composer: Overview & Usecases](https://civitai.com/articles/5760/comfyui-workflow-scene-composer)
+- [OpenPose NSFW Pose Pack (Portrait V2)](https://civitai.com/models/574236) – portrait pose library unzipped into `ComfyUI/input/pose_library/`.
+
+Explore the CivitAI workflows tab for additional explicit-focused templates (search terms like "Illustrious", "Pony", or "NSFW ComfyUI").
+
+
 ## Quick Start
 
 1. Install dependencies (Python, ComfyUI runtime) per upstream ComfyUI instructions or use the provided scripts.
