@@ -45,4 +45,5 @@ Record interesting line substitutions in `workflows/recipes/` so you can reuse t
 - Portrait pose PNGs from `posesPacksCollection_portraitV2` are mirrored in `input/pose_library/`; pass any of them via `--control-image input/pose_library/pv2_X.png`.
 - Run `apply_case_prompt.py --add-controlnet --controlnet <model.safetensors> --control-image /path/to/reference.png` to clone the workflow with a ControlNet pipeline. The script copies the reference into `ComfyUI/input/` and re-targets the sampler so you can fine-tune strength/start/end inside ComfyUI.
 - Swap poses by replacing the file under `ComfyUI/input/` (or rerun the script) and reload; the ControlNet loader caches the selected model for fast iteration.
+- For img2img runs, place a base image at `input/source_image.png`; the `illustrious_case_img2img.json` workflow encodes it and blends with ControlNet/IPAdapter guidance.
 - For depth/canny maps generated within ComfyUI, drop them into `ComfyUI/input/` and refresh—no graph surgery required.

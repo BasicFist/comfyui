@@ -28,6 +28,7 @@ This repository hosts a tuned ComfyUI workspace optimized for explicit/mature im
     - `illustrious_case_ipadapter.json`, `illustrious_case_ipadapter_controlnet.json`, `my_explicit_scene.json` – generated variants demonstrating IPAdapter & ControlNet integrations.
     - `illustrious_case_romantic.json` – romantic preset without ControlNet for softer compositions.
     - `illustrious_case_aftercare.json` – aftercare portrait using the IPAdapter Plus Face preset.
+    - `illustrious_case_img2img.json` – image-to-image variant: load a source image via `input/source_image.png`, preserves pose with ControlNet and style with IPAdapter.
     - `recipes/case_prompt_pools.json` – curated CASE vocab and style presets.
     - `recipes/generate_case_prompt.py` – CLI helper for building CASE prompts (`--style-preset romantic|hardcore|aftercare`).
     - `recipes/apply_case_prompt.py` – workflow patcher with flags:
