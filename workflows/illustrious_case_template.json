@@ -1,0 +1,116 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 30,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0,
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Expressiveh, (masterpiece:1.1), (best quality), (very aesthetic), volumetric lighting, dynamic composition, depth of field, cinematic framing, color grading\n\nwriting at desk, active pose, motion blur hints, gentle smile, storytelling focus\n\n1girl, freckles, ginger hair, glasses, expressive eyes, detailed face, detailed hands, natural proportions\n\nindoor library, sunset lighting, warm tones, light particles, dust motes, atmosphere",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, disfigured, deformed, bad face, bad proportions, anatomical nonsense, text, logo, watermark, username, monochrome, duplicate, multiple views, jpeg artifacts, sketch",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "10",
+        2
+      ],
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "artistic_",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "10",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "10",
+        0
+      ],
+      "clip": [
+        "11",
+        0
+      ],
+      "lora_name": "Pony/anime/Expressive_H-000001.safetensors",
+      "strength_model": 0.75,
+      "strength_clip": 0.65
+    }
+  }
+}

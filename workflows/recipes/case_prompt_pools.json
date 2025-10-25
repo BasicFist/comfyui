@@ -1,0 +1,505 @@
+{
+  "sets": {
+    "general": {
+      "composition": {
+        "quality": [
+          "(masterpiece:1.1)",
+          "(best quality)",
+          "very aesthetic",
+          "absurdres",
+          "award winning",
+          "studio lighting"
+        ],
+        "lighting": [
+          "volumetric lighting",
+          "rim lighting",
+          "soft global illumination",
+          "high key lighting",
+          "backlit glow",
+          "dramatic spotlight"
+        ],
+        "camera": [
+          "cinematic framing",
+          "dynamic composition",
+          "depth of field",
+          "wide angle",
+          "shot from below",
+          "over the shoulder shot",
+          "intimate portrait framing"
+        ],
+        "style": [
+          "color graded",
+          "film grain",
+          "painterly strokes",
+          "illustrative rendering",
+          "photographic realism",
+          "stylized lighting",
+          "editorial spread"
+        ],
+        "style_token": [
+          "Expressiveh"
+        ],
+        "mood": [
+          "dreamy ambience",
+          "cinematic tension",
+          "playful energy",
+          "moody chiaroscuro",
+          "whimsical glow"
+        ],
+        "narrative": [
+          "storytelling focus",
+          "character-centric",
+          "moment of discovery",
+          "introspective pause",
+          "collaborative scene"
+        ]
+      },
+      "action": {
+        "gesture": [
+          "writing at desk",
+          "adjusting glasses",
+          "reaching out",
+          "hands clasped together",
+          "dramatic pose",
+          "leaning forward",
+          "mid stride",
+          "looking back over shoulder",
+          "playful twirl"
+        ],
+        "motion": [
+          "motion blur hints",
+          "flowing cloth",
+          "hair fluttering",
+          "dynamic pose",
+          "expressive body language",
+          "energetic movement",
+          "poised stillness"
+        ],
+        "expression": [
+          "gentle smile",
+          "focused expression",
+          "playful smirk",
+          "confident stare",
+          "thoughtful gaze",
+          "determined eyes",
+          "soft laughter"
+        ],
+        "interaction": [
+          "sharing a secret",
+          "guiding motion",
+          "stepping in sync",
+          "offering support",
+          "inviting gesture"
+        ]
+      },
+      "subject": {
+        "identity": [
+          "1girl",
+          "solo heroine",
+          "adventurer",
+          "scholar",
+          "modern protagonist",
+          "enigmatic muse"
+        ],
+        "face": [
+          "freckles",
+          "expressive eyes",
+          "detailed face",
+          "subtle blush",
+          "soft eyelashes",
+          "defined jawline",
+          "dimples"
+        ],
+        "hair": [
+          "ginger hair",
+          "long wavy hair",
+          "short bob cut",
+          "messy ponytail",
+          "braided highlights",
+          "multicolor streaks",
+          "twintails"
+        ],
+        "wardrobe": [
+          "tailored coat",
+          "layered outfit",
+          "casual chic attire",
+          "utilitarian ensemble",
+          "retro inspired clothing",
+          "stylish accessories",
+          "statement jacket"
+        ],
+        "details": [
+          "detailed hands",
+          "natural proportions",
+          "delicate jewelry",
+          "book tucked under arm",
+          "floating interface panels",
+          "storytelling props",
+          "tattoos peeking"
+        ],
+        "body": [
+          "athletic build",
+          "soft curves",
+          "long legs",
+          "defined collarbone",
+          "graceful posture"
+        ],
+        "accessories": [
+          "sleek smartwatch",
+          "minimalist earrings",
+          "statement glasses",
+          "layered necklaces",
+          "stacked rings"
+        ]
+      },
+      "environment": {
+        "location": [
+          "indoor library",
+          "sunlit atelier",
+          "noir city balcony",
+          "cyberpunk workspace",
+          "futuristic observatory",
+          "enchanted forest clearing",
+          "industrial loft"
+        ],
+        "time": [
+          "sunset lighting",
+          "blue hour glow",
+          "golden hour",
+          "moonlit ambience",
+          "dawn haze",
+          "stormy twilight",
+          "late afternoon warmth"
+        ],
+        "atmosphere": [
+          "warm tones",
+          "light particles",
+          "floating dust motes",
+          "misty halo",
+          "neon reflections",
+          "rain streaks on glass",
+          "gentle haze"
+        ],
+        "supporting": [
+          "stacks of books",
+          "holographic displays",
+          "scattered sketches",
+          "candles flickering",
+          "window reflections",
+          "lush foliage backdrop",
+          "soft draped fabrics"
+        ],
+        "texture": [
+          "weathered wood",
+          "polished concrete",
+          "velvet cushions",
+          "glass reflections",
+          "stone lattice"
+        ],
+        "sensory": [
+          "whispered conversation",
+          "pages rustling",
+          "distant city glow",
+          "rain tapping",
+          "soft music atmosphere"
+        ]
+      }
+    },
+    "mature": {
+      "composition": {
+        "quality": [
+          "(sensual masterpiece)",
+          "(opulent lighting)",
+          "sumptuous detail"
+        ],
+        "lighting": [
+          "sensual low key lighting",
+          "candlelit shadows",
+          "neon strip glow",
+          "warm bedside lamp",
+          "dusky amber wash"
+        ],
+        "camera": [
+          "intimate close-up",
+          "lingering mid-shot",
+          "chiaroscuro framing",
+          "bedside voyeur angle",
+          "handheld allure"
+        ],
+        "style": [
+          "boudoir photography",
+          "sultry color grading",
+          "erotic illustration finish",
+          "glossy pin-up",
+          "velvet noir"
+        ],
+        "style_token": [
+          "Expressiveh"
+        ],
+        "mood": [
+          "heated anticipation",
+          "smouldering desire",
+          "slow-burn intimacy",
+          "decadent indulgence"
+        ],
+        "narrative": [
+          "after-dark rendezvous",
+          "stolen moment",
+          "tangled passion",
+          "shared fantasy"
+        ]
+      },
+      "action": {
+        "gesture": [
+          "straddling partner",
+          "pressing bodies together",
+          "arching back in ecstasy",
+          "gripping silk sheets",
+          "pinning wrists overhead",
+          "guiding partner's hand",
+          "lifting thigh"
+        ],
+        "motion": [
+          "rhythmic thrust",
+          "hips rocking",
+          "slow grinding motion",
+          "trembling thighs",
+          "swaying hips",
+          "breathing in tandem"
+        ],
+        "expression": [
+          "lustful gaze",
+          "half-lidded moan",
+          "biting lower lip",
+          "breathless pant",
+          "wicked smile",
+          "eyes rolled back"
+        ],
+        "acts": [
+          "deep kiss",
+          "oral worship",
+          "teasing fingertips",
+          "sensual massage",
+          "guided penetration"
+        ],
+        "interaction": [
+          "whispering dirty talk",
+          "mutual undressing",
+          "interlaced fingers",
+          "shared toy play",
+          "supportive embrace"
+        ]
+      },
+      "subject": {
+        "identity": [
+          "sensual muse",
+          "dominant partner",
+          "submissive lover",
+          "entwined lovers",
+          "escort fantasy",
+          "polyamorous trio"
+        ],
+        "face": [
+          "smudged lipstick",
+          "wet lips",
+          "flushed cheeks",
+          "heavy-lidded eyes",
+          "tear-lined lashes",
+          "sweat-kissed skin"
+        ],
+        "hair": [
+          "sweat-tousled hair",
+          "damp bedroom waves",
+          "loosened updo",
+          "slicked back ponytail",
+          "messy fringe"
+        ],
+        "wardrobe": [
+          "strappy lingerie",
+          "lace corset",
+          "sheer bodysuit",
+          "open silk robe",
+          "collar and leash",
+          "garter belt and stockings"
+        ],
+        "details": [
+          "glistening skin",
+          "arched spine",
+          "handcuffs biting wrists",
+          "bite marks on neck",
+          "slick thighs",
+          "heaving chest",
+          "pearls against skin"
+        ],
+        "body": [
+          "full hips",
+          "toned abdomen",
+          "soft tummy",
+          "curved back",
+          "thigh gap",
+          "freckled shoulders"
+        ],
+        "accessories": [
+          "choker with charm",
+          "bondage cuffs",
+          "silk blindfold",
+          "body chain",
+          "ankle restraints"
+        ]
+      },
+      "environment": {
+        "location": [
+          "candlelit bedroom",
+          "luxury hotel suite",
+          "private club room",
+          "shower bathed in steam",
+          "candlelit dungeon",
+          "mirrored boudoir"
+        ],
+        "time": [
+          "after midnight glow",
+          "neon-soaked twilight",
+          "late night haze",
+          "predawn stillness"
+        ],
+        "atmosphere": [
+          "humid air",
+          "steam curling",
+          "moody red gels",
+          "shadows from candlelight",
+          "mirror reflections",
+          "hazy perfume swirl"
+        ],
+        "supporting": [
+          "discarded lingerie",
+          "rumpled silk sheets",
+          "champagne on nightstand",
+          "restraints hanging nearby",
+          "condoms on bedside",
+          "open toy drawer"
+        ],
+        "texture": [
+          "velvet headboard",
+          "satin pillows",
+          "heated tiles",
+          "rain-specked window",
+          "mirrored floor"
+        ],
+        "sensory": [
+          "muffled moans",
+          "creaking bedsprings",
+          "shadows dancing",
+          "heavy breathing",
+          "slow bass music"
+        ]
+      }
+    }
+  },
+  "negative_base": [
+    "lowres",
+    "worst quality",
+    "normal quality",
+    "bad anatomy",
+    "bad hands",
+    "missing fingers",
+    "extra digits",
+    "bad proportions",
+    "anatomical nonsense",
+    "bad face",
+    "text",
+    "logo",
+    "watermark",
+    "username",
+    "duplicate",
+    "multiple views",
+    "monochrome",
+    "jpeg artifacts",
+    "sketch"
+  ],
+  "negative_optional": {
+    "nsfw_cleanup": [
+      "censored",
+      "mosaic",
+      "nsfw",
+      "exposed anatomy"
+    ],
+    "distortion": [
+      "mutated",
+      "deformed",
+      "twisted limbs",
+      "extra arms",
+      "floating limbs"
+    ],
+    "body_artifacts": [
+      "broken spine",
+      "bloating",
+      "asymmetrical breasts",
+      "warped torso"
+    ],
+    "fluid_control": [
+      "messy liquid artifacts",
+      "unrealistic gloss",
+      "random fluid splatter"
+    ]
+  },
+  "style_presets": {
+    "romantic": {
+      "composition": [
+        "soft vignette",
+        "rose-tinted palette"
+      ],
+      "action": [
+        "gentle embrace"
+      ],
+      "subject": [
+        "tender expression",
+        "interlaced fingers"
+      ],
+      "environment": [
+        "bedside candlelight",
+        "scattered rose petals"
+      ],
+      "negative": []
+    },
+    "hardcore": {
+      "composition": [
+        "high-contrast lighting",
+        "raw kinetic energy"
+      ],
+      "action": [
+        "rough grip",
+        "feral intensity"
+      ],
+      "subject": [
+        "bite marks",
+        "sweat-slick skin"
+      ],
+      "environment": [
+        "gritty neon haze",
+        "metal fixtures"
+      ],
+      "negative": [
+        "soft focus"
+      ]
+    },
+    "aftercare": {
+      "composition": [
+        "warm desaturated glow",
+        "hushed intimacy"
+      ],
+      "action": [
+        "wrapped in blanket",
+        "forehead touch"
+      ],
+      "subject": [
+        "sleepy smile",
+        "loosened hair"
+      ],
+      "environment": [
+        "crumpled sheets",
+        "soft lamp light"
+      ],
+      "negative": []
+    }
+  }
+}

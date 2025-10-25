@@ -1,0 +1,155 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 30,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0,
+      "model": [
+        "15",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "sumptuous detail, neon strip glow, chiaroscuro framing, velvet noir, Expressiveh, decadent indulgence, stolen moment, soft vignette, rose-tinted palette\nguiding partner's hand, rhythmic thrust, half-lidded moan, whispering dirty talk, teasing fingertips, gentle embrace\nentwined lovers, wet lips, slicked back ponytail, collar and leash, glistening skin, thigh gap, bondage cuffs, tender expression, interlaced fingers\ncandlelit bedroom, neon-soaked twilight, shadows from candlelight, champagne on nightstand, satin pillows, heavy breathing, bedside candlelight, scattered rose petals",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, bad proportions, anatomical nonsense, bad face, text, logo, watermark, username, duplicate, multiple views, monochrome, jpeg artifacts, sketch, broken spine, bloating, asymmetrical breasts, warped torso, messy liquid artifacts, unrealistic gloss, random fluid splatter",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "10",
+        2
+      ],
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "artistic_",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "10",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "10",
+        0
+      ],
+      "clip": [
+        "11",
+        0
+      ],
+      "lora_name": "Pony/anime/Expressive_H-000001.safetensors",
+      "strength_model": 0.75,
+      "strength_clip": 0.65
+    }
+  },
+  "13": {
+    "class_type": "IPAdapterUnifiedLoader",
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ],
+      "preset": "PLUS (high strength)"
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "example.png"
+    }
+  },
+  "15": {
+    "class_type": "IPAdapterAdvanced",
+    "inputs": {
+      "model": [
+        "13",
+        0
+      ],
+      "ipadapter": [
+        "13",
+        1
+      ],
+      "image": [
+        "14",
+        0
+      ],
+      "weight": 0.85,
+      "weight_type": "style and composition",
+      "combine_embeds": "average",
+      "start_at": 0.0,
+      "end_at": 0.7,
+      "embeds_scaling": "K+mean(V) w/ C penalty"
+    }
+  }
+}

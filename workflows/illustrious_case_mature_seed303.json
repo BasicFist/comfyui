@@ -1,0 +1,116 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 30,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0,
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "(sensual masterpiece), candlelit shadows, lingering mid-shot, boudoir photography, Expressiveh, decadent indulgence, stolen moment\ngripping silk sheets, trembling thighs, wicked smile, whispering dirty talk, teasing fingertips\nescort fantasy, tear-lined lashes, sweat-tousled hair, collar and leash, pearls against skin, full hips, body chain\nluxury hotel suite, predawn stillness, moody red gels, discarded lingerie, mirrored floor, heavy breathing",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, bad proportions, anatomical nonsense, bad face, text, logo, watermark, username, duplicate, multiple views, monochrome, jpeg artifacts, sketch, messy liquid artifacts, unrealistic gloss, random fluid splatter, broken spine, bloating, asymmetrical breasts, warped torso",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "10",
+        2
+      ],
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "artistic_",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "10",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "10",
+        0
+      ],
+      "clip": [
+        "11",
+        0
+      ],
+      "lora_name": "Pony/anime/Expressive_H-000001.safetensors",
+      "strength_model": 0.75,
+      "strength_clip": 0.65
+    }
+  }
+}
