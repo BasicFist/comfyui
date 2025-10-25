@@ -58,6 +58,7 @@ Below is the exact sequence used to build this workspace from a vanilla ComfyUI 
    Remove nested `.git` folders so the node suites live directly inside this repository.
 
 2. **Download large model assets (kept out of Git)**
+   - Optional pose libraries can be unzipped into `ComfyUI/input/pose_library/` (e.g. `posesPacksCollection_portraitV2`); the helper scripts will accept them via `--control-image`.
    ```bash
    # SDXL IPAdapter weights
    curl -L -o models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors \
