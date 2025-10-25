@@ -1,0 +1,229 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 20,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 0.45,
+      "model": [
+        "18",
+        0
+      ],
+      "positive": [
+        "15",
+        0
+      ],
+      "negative": [
+        "15",
+        1
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "(velvet noir), dusky amber wash, chiaroscuro framing, erotic illustration finish, Expressiveh, smouldering desire, after-dark rendezvous, high-contrast lighting, raw kinetic energy\narching back in ecstasy, swaying hips, breathless pant, supportive embrace, deep kiss, feral intensity\ndominant partner, sweat-kissed skin, messy fringe, garter belt and stockings, glistening skin, freckled shoulders, body chain, bite marks, sweat-slick skin\nprivate club room, neon-soaked twilight, hazy perfume swirl, restraints hanging nearby, satin pillows, creaking bedsprings, gritty neon haze, metal fixtures\n\nlayered lighting, photoreal skin texture, subtle film grain, high-frequency detail",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "lowres, worst quality, normal quality, bad anatomy, bad hands, missing fingers, extra digits, bad proportions, anatomical nonsense, bad face, text, logo, watermark, username, duplicate, multiple views, monochrome, jpeg artifacts, sketch, broken spine, bloating, asymmetrical breasts, warped torso, messy liquid artifacts, unrealistic gloss, random fluid splatter, soft focus",
+      "clip": [
+        "12",
+        1
+      ]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "samples": [
+        "20",
+        0
+      ],
+      "vae": [
+        "10",
+        2
+      ],
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "artistic_",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "ponyDiffusionV6XL_v6StartWithThisOne.safetensors"
+    }
+  },
+  "11": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "10",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "10",
+        0
+      ],
+      "clip": [
+        "11",
+        0
+      ],
+      "lora_name": "Pony/anime/Expressive_H-000001.safetensors",
+      "strength_model": 0.75,
+      "strength_clip": 0.65
+    }
+  },
+  "13": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "OpenPoseXL2.safetensors"
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pose_library/pv2_3.png"
+    }
+  },
+  "15": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "control_net": [
+        "13",
+        0
+      ],
+      "image": [
+        "14",
+        0
+      ],
+      "strength": 0.8,
+      "start_percent": 0.0,
+      "end_percent": 1.0
+    }
+  },
+  "16": {
+    "class_type": "IPAdapterUnifiedLoader",
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ],
+      "preset": "PLUS (high strength)"
+    }
+  },
+  "17": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "output/openwebui_00005_.png"
+    }
+  },
+  "18": {
+    "class_type": "IPAdapterAdvanced",
+    "inputs": {
+      "model": [
+        "16",
+        0
+      ],
+      "ipadapter": [
+        "16",
+        1
+      ],
+      "image": [
+        "17",
+        0
+      ],
+      "weight": 0.85,
+      "weight_type": "style and composition",
+      "combine_embeds": "average",
+      "start_at": 0.05,
+      "end_at": 0.6,
+      "embeds_scaling": "K+mean(V) w/ C penalty"
+    }
+  },
+  "19": {
+    "class_type": "LatentUpscaleBy",
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "upscale_method": "bilinear",
+      "scale_by": 1.5
+    }
+  },
+  "20": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 42,
+      "steps": 15,
+      "cfg": 4.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.35,
+      "model": [
+        "18",
+        0
+      ],
+      "positive": [
+        "15",
+        0
+      ],
+      "negative": [
+        "15",
+        1
+      ],
+      "latent_image": [
+        "19",
+        0
+      ]
+    }
+  }
+}
